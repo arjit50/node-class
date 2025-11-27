@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express();
 
-const cookieSession = require('cookie-session');
+const session = require("express-session");
+
 
 // Middleware
 app.use(
-  cookieSession({
+  session({
     name: "session",
     keys: ["secret_key"],      // encryption key
     maxAge: 24 * 60 * 60 * 1000 // 24 hours
